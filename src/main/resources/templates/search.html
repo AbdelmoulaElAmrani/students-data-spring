@@ -71,7 +71,7 @@
         </div>
 
     </div>
-    <div th:if="${!students.isEmpty()}">
+    <div th:if="${not #lists.isEmpty(students)}">
 
         <table class="table">
             <thead>
@@ -126,7 +126,7 @@
             </tbody>
         </table>
     </div>
-    <div th:if="${students.isEmpty()}">
+    <div th:if="${#lists.isEmpty(students)}">
         <h2>Sorry your search did not match any data! try one more time.</h2>
     </div>
 </main>
