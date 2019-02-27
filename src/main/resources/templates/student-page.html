@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:c="http://www.w3.org/1999/XSL/Transform">
+<head th:replace="partials::head('Search')"></head>
+
+<body>
+<nav th:replace="partials :: navbar" />
+
+<main class="container">
+    <h1>STUDENT PROFILE</h1>
+    <div class="row student-profile"    th:object="${student}"  >
+        <div class="col s4 profile-img">
+            <img th:src="'http://tinygraphs.com/squares/'+*{name}"/>
+        </div>
+        <div class="col s8">
+            <div class="col s12 studentName">
+                <p>Student name : <b th:text="*{name}"></b></p>
+            </div>
+            <div class="col s12 studentId">
+                <p>Student ID : <b th:text="*{studentID}"></b></p>
+
+            </div>
+            <div class="col s12 campus">
+                <p>Campus : <b th:text="*{campus}"></b></p>
+
+            </div>
+            <div class="col s12 ">
+                <div class=" col s6 schoolYr">
+
+                <p>SchoolYr : <b th:text="*{schoolYr}"></b></p>
+                </div>
+                <div class=" col s6 entryDate">
+
+                <p>Entry Date : <b th:text="${(student.entryDate.getMonth()+1) +'/'+ student.entryDate.getDate() +'/'+ (student.entryDate.getYear()+1900)}"></b></p>
+                </div>
+            </div>
+
+        </div>
+        <div class="row ">
+            <div class="col s8 offset-s2 student-action">
+                <div class="col s6">
+                    <strong>Edit this student</strong>
+                    <a class="btn btn-floating" th:href="'/edit/'+ ${id}">
+                        <i class="material-icons">edit</i>
+                    </a>
+                </div>
+                <div class="col s6">
+                    <strong>Delete this student</strong>
+                    <a class="btn-floating btn modal-trigger" th:href="${'#modal' + id}">
+                        <i class="material-icons">delete_forever</i>
+                    </a>
+                    <div th:id="${'modal' + id}" class="modal">
+                        <form method="POST" th:action="'/delete/'+ ${id}">
+                            <div class="modal-content">
+                                <h4>WARNING</h4>
+                                <p>By deleting this the data related to this student will be gone forever</p>
+                                <div class="modal-footer">
+
+                                    <button type="submit" class="modal-close waves-effect waves-green btn-flat">Delete</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</main>
+
+<footer th:replace="partials :: footer" />
+
+<script th:replace="partials :: jquery" />
+<script th:replace="partials :: materializescript" />
+<script th:replace="partials :: myscript" />
+
+</body>
+</html>

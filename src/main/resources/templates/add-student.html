@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:c="http://www.w3.org/1999/XSL/Transform">
+<head th:replace="partials::head('add student')"></head>
+
+<body>
+<nav th:replace="partials :: navbar" />
+<main class="container">
+    <h1>New Students</h1>
+
+
+    <form class="col s12"  th:action="@{/add}" method="post" th:object="${student}" >
+        <div class="row">
+            <div class="input-field col s4">
+                <input id="last_name" type="text" name="byname" class="validate" th:field="*{name}"/>
+                <label for="last_name">Name</label>
+            </div>
+            <div class="input-field col s4">
+                <input id="StudentID" type="number" name="StudentID" class="validate" th:field="*{studentID}"/>
+                <label for="StudentID">StudentID</label>
+            </div>
+            <div class="input-field col s4">
+                <input id="GradeLevel" type="number" name="GradeLevel" class="validate" th:field="*{gradeLevel}"/>
+                <label for="GradeLevel">GradeLevel</label>
+            </div>
+            <div class="input-field col s4">
+                <label id="entryDateLabel">EntryDate</label>
+                <div class="row">
+                <input type="text" placeholder="MM" name="month" class="validate col s4" />
+                <input  type="text" placeholder="DD" name="day" class="validate col s4" />
+                    <input   type="text" placeholder="YYYY" name="year" class="validate col s4" />
+                </div>
+            </div>
+            <div class="input-field col s4">
+                <input id="Campus" type="number" name="Campus" class="validate" th:field="*{campus}"/>
+                <label for="Campus">Campus</label>
+            </div>
+            <div class="input-field col s4">
+                <input id="SchoolYr" type="number" name="SchoolYr" class="validate" th:field="*{schoolYr}"/>
+                <label for="SchoolYr">SchoolYr</label>
+            </div>
+        </div>
+        <button class="btn waves-effect waves-light right" type="submit" >ADD</button>
+    </form>
+</main>
+
+<footer th:replace="partials :: footer" />
+
+<script th:replace="partials :: jquery" />
+<script th:replace="partials :: materializescript" />
+<script th:replace="partials :: myscript" />
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+
+main{
+    min-height: 100vh;
+}
+
+#entryDateLabel{
+    position: absolute;
+    top: -27px;
+}
+.page-footer , nav , .btn ,.btn-floating {
+    background-color: #272838;
+}
+.footer-copyright{
+    background-color: #404258;
+}
+.profile-img img{
+    margin-top: 27px;
+}
+.student-profile{
+    font-size: 24px;
+}
+.student-action{
+    color: #de5454;
+    margin-top: 50px;
+}
+.nav-wrapper{
+    padding-left: 36vw;
+}
+.tabs .tab a ,.tabs .tab a:hover, .tabs .tab a.active{
+    color: #404258;
+}
+.tabs .indicator {
+    background-color: #323348;
+}
+h1{
+    text-align: center;
+}
+table{
+    margin-bottom: 100px;
+}

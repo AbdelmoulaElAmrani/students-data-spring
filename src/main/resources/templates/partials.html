@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head th:fragment="head(title)">
+    <meta charset="UTF-8"/>
+    <title th:text="${title}"></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="/style/style.css" />
+
+
+    <script src="c"></script>
+</head>
+<body>
+
+    <header th:fragment="navbar">
+        <nav>
+            <div class="nav-wrapper">
+                <ul class="center">
+                    <li><a href="/"><i class="material-icons left">all_out</i>All Students</a></li>
+                    <li><a href="/add"><i class="material-icons right">person_add</i>add Student</a></li>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+
+    <footer  th:fragment="footer"  class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">STUDENTS DATA PROJECT</h5>
+                    <p class="grey-text text-lighten-4">This project is a web application built using spring.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="/">ALL STUDENTS</a></li>
+                        <li><a class="grey-text text-lighten-3" href="/add">ADD STUDENT</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2019 Copyright SD
+                <a class="grey-text text-lighten-4 right" href="#!">STUDENTS DATA PROJECT</a>
+            </div>
+        </div>
+    </footer>
+
+    <script th:fragment="myscript" th:src="@{/js/main.js}"></script>
+    <script th:fragment="materializescript" th:src="@{https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js}"></script>
+    <script th:fragment="jquery" th:src="@{https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js}"></script>
+</body>
+</html>
