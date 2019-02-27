@@ -13,20 +13,5 @@ public class StudentService {
     StudentsRepository studentsRepository;
 
 
-//    public List<Student> findBySearchInput(String searchInput){
-//        String[] splited = searchInput.trim().split("\\s+");
-//        Iterable<Student> allStudents = studentsRepository.findAll();
-//        List<Student> students = null;
-//        for(Student s : allStudents){
-//            for (int i = 0; i < splited.length; i++) {
-//                if (splited[i].equals(s.getName())){
-//                    students.add((Student) studentsRepository.findByNameContaining(splited[i]));
-//                }
-//            }
-//        }
-//
-//            return students;
-//        }
-
 
 }

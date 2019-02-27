@@ -8,7 +8,6 @@ import java.util.List;
 
 public interface StudentsRepository extends CrudRepository<Student, Integer> {
 
-//    List<Student> findAllByCampusContainingOrNameContainingOrSchoolYrContaining( Optional<String> campus , Optional<String> name , Optional<String> SchoolYr);
 
 
     List<Student> findByNameContaining(String name);
@@ -19,7 +18,6 @@ public interface StudentsRepository extends CrudRepository<Student, Integer> {
     List<Student> findByentryDate(Date entryDate);
     List<Student> findBygradeLevel(int gradeLevel);
 
-//
 
 
 }
